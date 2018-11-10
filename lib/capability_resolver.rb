@@ -1,5 +1,6 @@
 require_relative 'capability_checker.rb'
 require_relative 'capability_store.rb'
+require 'rainbow'
 
 class CapabilityResolver
   attr_reader :store, :checker, :log
@@ -17,7 +18,7 @@ class CapabilityResolver
     resolved = allowed.intersection(requested)
     disallowed = requested - allowed
     disallowed.each do |capability|
-      log.warn("#{capability} requested but now allowed")
+      log.warn(Rainbow("#{capability} requested but not allowed").red.bg(:yellow).bright)
     end
     resolved.to_a
   end

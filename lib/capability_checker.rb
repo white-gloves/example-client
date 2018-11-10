@@ -1,5 +1,6 @@
 require 'unirest'
 require 'logger'
+require 'rainbow'
 
 class CapabilityChecker
     attr_reader :uri
@@ -11,7 +12,7 @@ class CapabilityChecker
     end
 
     def check
-        log.info "Calling #{capabilities_url}"
+        log.info Rainbow("Calling #{capabilities_url}").blue
         log.info "Faking result for now"
         ['size', 'color', 'name']
     end
