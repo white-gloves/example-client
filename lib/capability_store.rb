@@ -1,3 +1,5 @@
+require 'rainbow'
+
 class CapabilityStore
   attr_accessor :log
 
@@ -6,8 +8,9 @@ class CapabilityStore
   end
 
   def get(scope = '')
-    log.info("Faking store get")
     return [] unless scope == 'shoes'
-    ['color', 'size']
+    cap = ['color', 'size']
+    log.debug Rainbow("Allowed capabilities #{cap}".blue)
+    cap
   end
 end

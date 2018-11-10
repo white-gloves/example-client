@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    awesome_print (1.8.0)
     json (1.8.6)
     mime-types (1.25.1)
     rainbow (3.0.0)
@@ -16,6 +17,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   rainbow
   unirest
 

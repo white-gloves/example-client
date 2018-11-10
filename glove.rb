@@ -8,4 +8,4 @@ abort("Given uri #{candidate} not valid") unless candidate =~ URI::regexp
 uri = URI(candidate)
 
 resolver = CapabilityResolver.new(uri)
-puts resolver.resolve
+resolver.resolve

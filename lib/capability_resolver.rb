@@ -20,6 +20,7 @@ class CapabilityResolver
     disallowed.each do |capability|
       log.warn(Rainbow("#{capability} requested but not allowed").red.bg(:yellow).bright)
     end
+    log.info(Rainbow("The allowed search will use: #{resolved.to_a}").green)
     resolved.to_a
   end
 

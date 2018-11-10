@@ -1,6 +1,7 @@
 require 'unirest'
 require 'logger'
 require 'rainbow'
+require 'awesome_print'
 
 class CapabilityChecker
     attr_reader :uri
@@ -13,8 +14,9 @@ class CapabilityChecker
 
     def check
         log.info Rainbow("Calling #{capabilities_url}").blue
-        log.info "Faking result for now"
-        ['size', 'color', 'name']
+        result = Unirest.get(capabilities_url)
+        log.debug "Got #{result.body['capabilities']}"
+        result.body['capabilities']
     end
 
     def scope
@@ -24,6 +26,6 @@ class CapabilityChecker
     private
 
     def capabilities_url
-        "#{uri.scheme}://#{uri.host}/capabilities/#{scope}"
+        "#{uri.scheme}://#{uri.host}:#{uri.port}/capabilities/#{scope}"
     end
 end
