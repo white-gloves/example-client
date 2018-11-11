@@ -19,6 +19,9 @@ class SensitivityChecker
     private
 
     def requested_fields
+      log.debug "Query #{query_params}"
+      return [] unless query_params != nil
+      
       arr_qp = query_params.split('&')
 
       i = 0

@@ -11,5 +11,8 @@ uri = URI(candidate)
 resolver = CapabilityResolver.new(uri)
 resolver.resolve
 
-sresolver = SensitivityResolver.new(uri.query)
-sresolver.resolve
+query_params = uri.query
+if query_params != nil
+  sresolver = SensitivityResolver.new(query_params)
+  sresolver.resolve
+end
