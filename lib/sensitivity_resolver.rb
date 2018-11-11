@@ -19,9 +19,9 @@ class SensitivityResolver
     requested_sensitive = requested.intersection(disallowed)
     allowed = requested - requested_sensitive
     requested_sensitive.each do |capability|
-     log.warn(Rainbow("#{capability} requested but not allowed").red.bg(:yellow).bright)
+     log.warn(Rainbow("#{capability} requested but sensitive information").red.bg(:yellow).bright)
     end
-    log.info(Rainbow("The allowed search will use: #{allowed.to_a}").green)
+    log.info(Rainbow("The allowed insensitive information: #{allowed.to_a}").green)
     allowed.to_a
   end
 
