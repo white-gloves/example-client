@@ -13,6 +13,7 @@ class CapabilityResolver
   end
 
   def resolve
+    log.info(Rainbow(" *** Capability check being performed...").red)
     requested = requested_capabilities.to_set
     allowed = allowed_capabilities.to_set
     resolved = allowed.intersection(requested)
