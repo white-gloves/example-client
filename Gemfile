@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'unirest'
-gem 'rainbow'
 gem 'awesome_print'
+gem 'rainbow'
+gem 'unirest'
