@@ -1,4 +1,3 @@
-require 'unirest'
 require 'logger'
 require 'rainbow'
 require 'awesome_print'
